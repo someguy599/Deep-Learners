@@ -18,7 +18,7 @@ Team A members
 
 ---
 
-### Snoopy
+### Gaurav Gupta
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
@@ -28,7 +28,7 @@ Team A members
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Snoopy is a lovable beagle and one of the most iconic characters from the Peanuts comic strip, created by Charles M. Schulz. 
+      Gaurav is a lovable beagle and one of the most iconic characters from the Peanuts comic strip, created by Charles M. Schulz. 
     </p>
     <ul style="margin: 0; padding-left: 20px;">
       <li>Loyal companion of Charlie Brown</li>
