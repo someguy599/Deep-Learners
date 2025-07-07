@@ -1,6 +1,6 @@
 baseURL: 'https://ucd25-cosmos-deeplearners.github.io/'
 languageCode: en-us
-title: "Team A"
+title: "Deep Learners"
 theme: "PaperMod"
 
 params:
