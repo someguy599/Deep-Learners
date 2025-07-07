@@ -28,7 +28,7 @@ Team A members
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Gaurav is a lovable beagle and one of the most iconic characters from the Peanuts comic strip, created by Charles M. Schulz. 
+      Gaurav is a rising senior from Pleasanton in the Bay Area. 
     </p>
     <ul style="margin: 0; padding-left: 20px;">
       <li>Loyal companion of Charlie Brown</li>
