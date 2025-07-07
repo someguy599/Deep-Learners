@@ -41,7 +41,7 @@ Team A members
 
 ---
 
-### Woodstock
+### Armaan Malkani
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
@@ -64,7 +64,7 @@ Team A members
 
 ---
 
-## Charlie Brown
+## Jordan Han
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
@@ -87,7 +87,7 @@ Team A members
 
 ---
 
-## Lucy Van Pelt
+## Aryav Semwal
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
@@ -110,7 +110,7 @@ Team A members
 
 ---
 
-## Sally Brown
+## Brianna Zhang
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
