@@ -91,8 +91,8 @@ Team A members
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="lucy.jpeg"
-       alt="Lucy Van Pelt"
+  <img src="Aryav_Photo.jpg"
+       alt="Aryav"
        style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; object-position: center; flex-shrink: 0;">
 
   <div style="flex: 1; text-align: left;">
@@ -100,8 +100,8 @@ Team A members
       Aryav is a rising junior from San Ramon in the Bay Area...
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>Aryav loves reading comics and watching movies</li>
-      <li>He loves Indian, Italian and Mediterranean cuisines</li>
+      <li>Loves reading comics and watching movies</li>
+      <li>Favorite subjects are Math and History</li>
       <li>Invincible and Spider-Man are his favorite heroes</li>
     </ul>
   </div>
