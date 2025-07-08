@@ -9,7 +9,7 @@ params:
   ShowToc: false
   profileMode:
     enabled: true
-    title: "Team A"
+    title: "Deep Learners"
     subtitle: "Description"
     imageUrl: "butter.jpeg"
     imageWidth: 120 # custom size
