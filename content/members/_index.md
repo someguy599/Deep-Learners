@@ -120,12 +120,12 @@ Team A members
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Sally Brown is ...
+      Brianna Zhang is a rising junior from San Diego in Socal...
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>AAA</li>
-      <li>BBB</li>
-      <li>CCC</li>
+      <li>Favorite color is blue</li>
+      <li>Has two dogs</li>
+      <li>Enjoys listening to music</li>
     </ul>
   </div>
   
