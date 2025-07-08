@@ -54,9 +54,9 @@ Team A members
       Armaan is a rising senior from Sunnyvale in the Bay Area. 
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>AAA</li>
-      <li>BBB</li>
-      <li>CCC</li>
+       <li>Loves to play sports including basketball and tennis</li>
+      <li>Enjoys traveling and visiting new places</li>
+      <li>Likes watching TV shows in his free time</li>
     </ul>
   </div>
 
