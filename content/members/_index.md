@@ -51,7 +51,7 @@ Team A members
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Woodstock is ...
+      Armaan is a rising senior from Sunnyvale in the Bay Area. 
     </p>
     <ul style="margin: 0; padding-left: 20px;">
       <li>AAA</li>
