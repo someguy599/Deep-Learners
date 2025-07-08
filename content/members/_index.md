@@ -22,8 +22,8 @@ Team A members
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="snoopy.jpeg"
-       alt="Snoopy"
+  <img src="gauravgupta.png"
+       alt="Gaurav"
        style="width: 150px; height: 150px; object-fit: cover; border-radius: 0%; object-position: center; flex-shrink: 0;">
 
   <div style="flex: 1; text-align: left;">
