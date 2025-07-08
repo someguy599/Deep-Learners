@@ -22,7 +22,7 @@ Team A members
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="gauravgupta.png"
+  <img src="gauravgupta.jpg"
        alt="Gaurav"
        style="width: 150px; height: 150px; object-fit: cover; border-radius: 0%; object-position: center; flex-shrink: 0;">
 
