@@ -68,18 +68,18 @@ Team A members
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="charlie.jpeg"
-       alt="Charlie Brown"
+  <img src="jordan.jpeg"
+       alt="Jordan Han"
        style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; object-position: center; flex-shrink: 0;">
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Jordan Han is ...
+      Jordan Han is a rising senior from San Diego
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>A rising senior</li>
-      <li>from San Diego</li>
       <li>10'13"</li>
+      <li>reads feminist literature</li>
+      <li>drinks matcha</li>
     </ul>
   </div>
   
