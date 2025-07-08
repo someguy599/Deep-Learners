@@ -28,12 +28,12 @@ Team A members
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Gaurav is a rising senior from Pleasanton in the Bay Area. 
+      Gaurav is a rising senior from Pleasanton in the Bay Area.
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>Loyal companion of Charlie Brown</li>
-      <li>Loves root beer and pizza</li>
-      <li>Sleeps on top of his doghouse, not inside it/li>
+      <li>Loves to play chess and do brain teasers</li>
+      <li>Watches educational YouTube videos in free time (e.g. Veritasium, TedEd)</li>
+      <li>Enjoys learning something new every day</li>
     </ul>
   </div>
 
