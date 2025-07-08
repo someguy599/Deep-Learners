@@ -100,9 +100,9 @@ Team A members
       Aryav is a rising junior from San Ramon in the Bay Area...
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>AAA</li>
-      <li>BBB</li>
-      <li>CCC</li>
+      <li>Aryav loves reading comics and watching movies</li>
+      <li>He loves Indian, Italian and Mediterranean cuisines</li>
+      <li>Invincible and Spider-Man are his favorite heroes</li>
     </ul>
   </div>
   
