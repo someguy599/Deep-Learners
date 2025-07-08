@@ -74,12 +74,12 @@ Team A members
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Charlie Brown is ...
+      Jordan Han is ...
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>AAA</li>
-      <li>BBB</li>
-      <li>CCC</li>
+      <li>A rising senior</li>
+      <li>from San Diego</li>
+      <li>10'13"</li>
     </ul>
   </div>
   
