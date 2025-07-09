@@ -11,7 +11,7 @@ params:
     enabled: true
     title: "Deep Learners"
     subtitle: "Description"
-    imageUrl: "deepbrain.avif"
+    imageUrl: "butter.jpeg"
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
 
