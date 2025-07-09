@@ -114,16 +114,16 @@ Team A members
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
-  <img src="sally.jpeg"
+  <img src="brianna.jpg"
        alt="Sally Brown"
        style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; object-position: center; flex-shrink: 0;">
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
-      Brianna Zhang is a rising junior from San Diego in Socal...
+      Brianna Zhang is a rising junior from San Diego...
     </p>
     <ul style="margin: 0; padding-left: 20px;">
-      <li>Favorite color is blue</li>
+      <li>Favorite food is pasta</li>
       <li>Has two dogs</li>
       <li>Enjoys listening to music</li>
     </ul>
