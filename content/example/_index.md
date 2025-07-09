@@ -1,4 +1,4 @@
 ---
-title: "Example
+title: "Example"
 ---
 Example
