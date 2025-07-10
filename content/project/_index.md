@@ -8,11 +8,9 @@ tocOpen: true
 
 Our goal was to find out the effect that air quality may have on people's income.
 
----
 
 ## Data Acquisition
 
----
 
 First, we decided to analyze the air quality and income based on counties within California. We found the data using public datasets that we searched for. 
 
@@ -20,7 +18,6 @@ We found the income data,which was income per capita per county in 2023, [here](
 
 We found the air quality data, which was measured in Micrograms per cubic meter (PM2.5) [here](https://fred.stlouisfed.org/release/tables?eid=266305&rid=175).
 
----
 
 ## Data Cleaning and Exploratory Data Analysis
 
