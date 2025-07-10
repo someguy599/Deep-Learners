@@ -23,9 +23,9 @@ menu:
       name: Members
       url: /members
       weight: 10
-    - identifier: Project
-      name: Project
-      url: /project/
+    - identifier: Mini Project
+      name: Mini Project
+      url: /mini-project/
       weight: 20
     - identifier: Example
       name: Example
