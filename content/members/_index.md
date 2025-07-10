@@ -14,8 +14,6 @@ title: "Members"
 }
 </style>
 
-Team A members
-
 ---
 
 ### Gaurav Gupta
@@ -116,7 +114,7 @@ Team A members
 
   <img src="brianna.jpg"
        alt="Sally Brown"
-       style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; object-position: center; flex-shrink: 0;">
+       style="width: 150px; height: 150px; object-fit: cover; border-radius: 25%; object-position: center; flex-shrink: 0;">
 
   <div style="flex: 1; text-align: left;">
     <p style="margin: 0; padding-top: 0.5em;">
@@ -130,13 +128,3 @@ Team A members
   </div>
   
 </div>
-
----
-
-## Snoopy (w/o photo)
-
-Snoopy is ...
-
-- AAA
-- BBB
-- CCC
