@@ -2,6 +2,7 @@
 title: "Air Quality effect on Income Project"
 showToc: true
 tocOpen: true
+summary: Our goal was to find out the effect that air quality may have on people's income.
 ---
 
 ## Introduction
