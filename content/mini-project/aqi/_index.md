@@ -29,3 +29,6 @@ To find a correlation, we used linear regression to get a line of best fit. We f
 
 ![](sctr.png#center)
 
+
+<iframe src="/plotly/income_aqi.html" width="100%" height="400px" style="border:none;"></iframe>
+
