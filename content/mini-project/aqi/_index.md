@@ -14,7 +14,7 @@ Our goal was determining whether air quality and people's income are correlated 
 ## Data Acquisition
 
 
-First, we analyzed the air quality and income based on counties within California. We found the data using public datasets that we searched for. 
+First, we obtained data from public datasets on air quality—-specifically PM 2.5 concentration--and income from all counties within California. 
 
 We found the income data, which was income per capita per county in 2023, [here](https://fred.stlouisfed.org/release/tables?eid=266305&rid=175).
 
