@@ -7,6 +7,9 @@ params:
   defaultTheme: auto
   disableThemeToggle: true
   ShowToc: false
+  socialIcons:
+    - name: github
+      url: "https://github.com/ucd25-cosmos-deeplearners/ucd25-cosmos-deeplearners.github.io/"
   math: true
   profileMode:
     enabled: true
