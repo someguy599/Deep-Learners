@@ -8,7 +8,7 @@ date: 2025-07-08
 
 ## Introduction
 
-Our goal was to find out the effect that air quality may have on people's income.
+Our goal was determining whether air quality and people's income are correlated among California counties.
 
 
 ## Data Acquisition
