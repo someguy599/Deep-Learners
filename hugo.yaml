@@ -11,7 +11,7 @@ params:
   profileMode:
     enabled: true
     title: "Deep Learners"
-    subtitle: "Too deep? I call that optimal ..."
+    subtitle: "UC Davis COSMOS – Cluster 11 – Data Science & Big Data Innovation"
     imageUrl: "deepbrain.avif"
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
