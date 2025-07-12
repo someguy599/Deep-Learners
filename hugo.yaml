@@ -23,13 +23,17 @@ menu:
       name: Members
       url: /members
       weight: 10
-    - identifier: Mini Project
-      name: Mini Project
+    - identifier: Mini Projects
+      name: Mini Projects
       url: /mini-project/
       weight: 20
-    - identifier: Example
-      name: Example
-      url: /example/
+    - identifier: Daily Journal
+      name: Daily Journal
+      url: /daily-journal/
+      weight: 40
+    - identifier: Final Project
+      name: Final Project
+      url: /final-project/
       weight: 30
 
 markup:
