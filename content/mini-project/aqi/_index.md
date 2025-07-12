@@ -2,15 +2,15 @@
 title: "Relationship Between Air Quality and Income in California"
 showToc: true
 tocOpen: true
-summary: Our goal was determining whether air quality and people's income are correlated among California counties.
+summary: Our goal was to determine whether air quality and people's income are correlated among California counties.
 date: 2025-07-08
 ---
 
 ## Introduction
 
-Our goal was determining whether air quality and people's income are correlated among California counties.
+Our goal was to determine whether air quality and people's income are correlated among California counties.
 
-
+---
 ## Data Acquisition
 
 
@@ -21,7 +21,7 @@ We found the average annual income per capita from each California county [here]
 
 We found PM2.5 concentrations, which were measured in micrograms per cubic meter (µg/$m^3$), [here](https://hdpulse.nimhd.nih.gov/data-portal/physical/table?age=001&age_options=ageall_1&demo=234&demo_options=air_pollution_1&physicaltopic=002&physicaltopic_options=physical_2&race=00&race_options=raceall_1&sex=0&sex_options=sexboth_1&statefips=06&statefips_options=area_states). This data comes from the NIH. 
 
-
+---
 ## Data Cleaning and Exploratory Data Analysis
 
 Next, we created a scatterplot to graph the Air Pollution vs. the Income for all the counties and encountered a few outliers. We used a mathematical formula, called the IQR rule to remove the outliers so a trend would be more visible. 
@@ -30,6 +30,7 @@ To find a correlation, we used linear regression to get a line of best fit. We f
 
 ![](sctr.png#center)
 
-
+---
+## Interactive Map Showing County Data
 <iframe src="/plotly/income_aqi.html" width="100%" height="400px" style="border:none;"></iframe>
 
