@@ -1,8 +1,8 @@
 ---
-title: "Air Quality effect on Income Project"
+title: "Relationship Between Air Quality and Income in California"
 showToc: true
 tocOpen: true
-summary: Our goal was to find out the effect that air quality may have on people's income.
+summary: Our goal was determining whether air quality and people's income are correlated among California counties.
 date: 2025-07-08
 ---
 
