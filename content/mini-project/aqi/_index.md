@@ -24,9 +24,9 @@ We found PM2.5 concentrations, which were measured in micrograms per cubic meter
 ---
 ## Data Cleaning and Exploratory Data Analysis
 
-Next, we created a scatterplot to graph the Air Pollution vs. the Income for all the counties and encountered a few outliers. We used a mathematical formula, called the IQR rule to remove the outliers so a trend would be more visible. 
+Next, we created a scatterplot of air pollution vs. income for all California counties. However, we encountered a few outliers, so we used the 1.5 IQR Rule to remove them to avoid skewing the results. 
 
-To find a correlation, we used linear regression to get a line of best fit. We found the correlation coefficient $r^2 \approx{-0.30}$, which indicates some negative correlation. This means the lower the air pollution, the higher the incomes; however, to reiterate, this is a weak correlation.
+We re-analyzed the data with linear regression to acquire a line of best fit. Our data's correlation coefficient $r \approx{-0.30}$ indicates a weak, negative correlation between income and air pollution. In other words, the lower the air pollution for a county, the higher the predicted average income.
 
 ![](sctr.png#center)
 
