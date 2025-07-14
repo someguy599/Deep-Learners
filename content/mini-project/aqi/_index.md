@@ -24,7 +24,6 @@ We found PM2.5 concentrations, which were measured in micrograms per cubic meter
 ---
 ## Data Table
 
-<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc;">
 | County | Air Pollution (PM2.5) | Per Capita Income ($) |
 |--------|------------------------|------------------------|
 | Alameda County | 11.8 | 106657 |
@@ -37,6 +36,12 @@ We found PM2.5 concentrations, which were measured in micrograms per cubic meter
 | Del Norte County | 10.3 | 47141 |
 | El Dorado County | 14.6 | 84533 |
 | Fresno County | 20.3 | 52728 |
+
+<details>
+<summary>Show more counties</summary>
+
+| County | Air Pollution (PM2.5) | Per Capita Income ($) |
+|--------|------------------------|------------------------|
 | Glenn County | 17.0 | 53013 |
 | Humboldt County | 8.8 | 57264 |
 | Imperial County | 11.9 | 47991 |
@@ -85,7 +90,8 @@ We found PM2.5 concentrations, which were measured in micrograms per cubic meter
 | Ventura County | 7.9 | 78091 |
 | Yolo County | 15.9 | 67778 |
 | Yuba County | 16.3 | 50587 |
-</div>
+
+</details>
 
 ---
 ## Data Cleaning and Exploratory Data Analysis
