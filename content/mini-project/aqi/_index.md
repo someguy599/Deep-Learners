@@ -23,6 +23,8 @@ We found PM2.5 concentrations, which were measured in micrograms per cubic meter
 
 ---
 ## Data Table
+
+<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc;">
 | County | Air Pollution (PM2.5) | Per Capita Income ($) |
 |--------|------------------------|------------------------|
 | Alameda County | 11.8 | 106657 |
@@ -83,6 +85,7 @@ We found PM2.5 concentrations, which were measured in micrograms per cubic meter
 | Ventura County | 7.9 | 78091 |
 | Yolo County | 15.9 | 67778 |
 | Yuba County | 16.3 | 50587 |
+</div>
 
 ---
 ## Data Cleaning and Exploratory Data Analysis
