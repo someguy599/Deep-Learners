@@ -31,17 +31,17 @@ We found PM2.5 concentrations, which were measured in micrograms per cubic meter
 | Amador County | 14.2 | 50020 |
 | Butte County | 16.1 | 56847 |
 | Calaveras County | 12.7 | 58425 |
-| Colusa County | 12.8 | 58303 |
-| Contra Costa County | 11.1 | 103218 |
-| Del Norte County | 10.3 | 47141 |
-| El Dorado County | 14.6 | 84533 |
-| Fresno County | 20.3 | 52728 |
 
 <details>
 <summary>Show more counties</summary>
 
 | County | Air Pollution (PM2.5) | Per Capita Income ($) |
 |--------|------------------------|------------------------|
+| Colusa County | 12.8 | 58303 |
+| Contra Costa County | 11.1 | 103218 |
+| Del Norte County | 10.3 | 47141 |
+| El Dorado County | 14.6 | 84533 |
+| Fresno County | 20.3 | 52728 |
 | Glenn County | 17.0 | 53013 |
 | Humboldt County | 8.8 | 57264 |
 | Imperial County | 11.9 | 47991 |
