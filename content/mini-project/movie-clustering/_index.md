@@ -42,7 +42,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 
 ![](pcakmeans.png#center)
 
-### <u>Cluster 0: Dramatic and/or Sci-Fi</u>
+**<u>Cluster 0: Dramatic and/or Sci-Fi</u>**
 
 - **Top 3 genres (percentage of cluster):**
     - Drama: 98.7%
@@ -54,7 +54,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 
 
 
-### <u>Cluster 1: Comedies and Lighthearted Movies</u>
+**<u>Cluster 1: Comedies and Lighthearted Movies</u>**
 
 - **Top 3 genres (percentage of cluster):**
     - Comedy: 90.2%
@@ -66,7 +66,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 
 
 
-### <u>Cluster 2: Exciting Horror Films</u>
+ **<u>Cluster 2: Exciting Horror Films</u>**
 
 - **Top 3 genres (percentage of cluster):**
     - Action: 65.7%
