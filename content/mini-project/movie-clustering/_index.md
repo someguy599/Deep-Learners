@@ -30,7 +30,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 
 ![](pcakmeans.png#center)
 
-### Cluster 0: Dramatic and/or Sci-Fi
+### <u>Cluster 0: Dramatic and/or Sci-Fi</u>
 
 - **Top 3 genres (percentage of cluster):**
     - Drama: 98.7%
@@ -42,7 +42,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 
 
 
-### Cluster 1: Comedies and Lighthearted Movies
+### <u>Cluster 1: Comedies and Lighthearted Movies</u>
 
 - **Top 3 genres (percentage of cluster):**
     - Comedy: 90.2%
@@ -54,7 +54,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 
 
 
-### Cluster 2: Exciting Horror Films
+### <u>Cluster 2: Exciting Horror Films</u>
 
 - **Top 3 genres (percentage of cluster):**
     - Action: 65.7%
@@ -77,7 +77,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 
 ![](tsnekmeans.png#center)
 
-**Cluster 0: Dramatic and/or Sci-Fi**
+**<u>Cluster 0: Dramatic and/or Sci-Fi</u>**
 
 - **Top 3 genres:**
     - Drama: 92.1%
@@ -88,7 +88,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 
 
 
-**Cluster 1: Various Comedies**
+**<u>Cluster 1: Various Comedies</u>**
 
 - **Top 3 genres:**
     - Comedy: 98.6%
@@ -99,7 +99,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 
 
 
-**Cluster 2: Exciting Horror Films**
+**<u>Cluster 2: Exciting Horror Films</u>**
 
 - **Top 3 genres:**
     - Horror: 63.3%
@@ -110,7 +110,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 
 
 
-**Cluster 3: Rom-Coms**
+**<u>Cluster 3: Rom-Coms</u>**
 
 - **Top 3 genres:**
     - Drama: 91.5%
@@ -126,4 +126,4 @@ Here is a visualization of the genres of the movies in each cluster (bar graph).
 
 ## Conclusion 
 
-As we can see from the results, the K-Means clustering using the PCA and t-SNE dimension reduction methods were both helpful, with the latter being a bit more specific and splitting comedy movies into rom-coms and other comedies, allowing for better reccomendations for viewers. Overall, we learned the use and effectiveness of dimensionality reduction and clustering algorithms, both of which are unsupervised learning methods in data science. 
+As we can see from the results, the K-Means clustering using the PCA and t-SNE dimension reduction methods were both helpful, with the latter being a bit more specific and splitting comedy movies into rom-coms and other comedies, allowing for better reccomendations for viewers. Overall, we learned the use and effectiveness of dimensionality reduction and clustering algorithms, both of which are unsupervised learning methods in
