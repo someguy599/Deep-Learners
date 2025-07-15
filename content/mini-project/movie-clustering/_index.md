@@ -10,6 +10,8 @@ date: 2025-07-11
 
 In this mini project, we aimed to recognize patterns from a dataset of movies based on various genres, durations and popularities for better movie recommendations to viewers. 
 
+![](movietable.png#center)
+
 ---
 ## Data Acquisition 
 
@@ -21,6 +23,14 @@ We were given a dataset of 300 random fictional movies and their respective genr
 ### Exploring
 
 First, we simply visualized the data and their individual features using basic plots such as histograms, box plots, and bar charts. 
+
+![](popularity.png#center)
+
+![](runtime.png#center)
+
+![](voteavg.png#center)
+
+![](genres.png#center)
 
 ### PCA and K-Means Clustering 
 
@@ -65,6 +75,8 @@ We then used KMeans clustering to group movies into three clusters based on thes
 - **Average runtime:** 95.32 minutes
 
 Here is a visualization of the genres of the movies in each cluster (bar graph).
+
+![](genrepca.png#center)
 ---
 
 
@@ -121,7 +133,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 
 Here is a visualization of the genres of the movies in each cluster (bar graph).
 
-
+![](genretsne.png#center)
 ---
 
 ## Conclusion 
