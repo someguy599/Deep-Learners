@@ -10,12 +10,14 @@ date: 2025-07-11
 
 In this mini project, we aimed to recognize patterns from a dataset of movies based on various genres, durations and popularities for better movie recommendations to viewers. 
 
-![](movietable.png#center)
-
 ---
 ## Data Acquisition 
 
 We were given a dataset of 300 random fictional movies and their respective genres (could be multiple), runtimes (minutes), popularities (1-100), average rating (1-10). The data was already cleaned.
+
+Below is a small sample of the data we recieved. 
+
+![](movietable.png#center)
 
 ---
 ## Data Analysis 
