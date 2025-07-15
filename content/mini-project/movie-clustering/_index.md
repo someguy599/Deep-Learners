@@ -13,7 +13,7 @@ In this mini project, we aimed to recognize patterns from a dataset of movies ba
 ---
 ## Data Acquisition 
 
-We were given a dataset of 300 random fictional movies and their respective genres (could be multiple), runtimes (minutes), popularities (1-100), average rating (1-10).
+We were given a dataset of 300 random fictional movies and their respective genres (could be multiple), runtimes (minutes), popularities (1-100), average rating (1-10). The data was already cleaned.
 
 ---
 ## Data Analysis 
@@ -28,7 +28,7 @@ Using PCA (Principal Component Analysis), we reduced the many features of the da
 
 We then used KMeans clustering to group movies into three clusters based on these components. We then analyzed each cluster to see which genres were most common, and calculated the average popularity and ratings for each group.
 
----
+![](pcakmeans.png#center)
 
 ### Cluster 0: Dramatic and/or Sci-Fi
 
@@ -40,7 +40,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 - **Average rating:** 6.58
 - **Average runtime:** 105.32 minutes
 
----
+
 
 ### Cluster 1: Comedies and Lighthearted Movies
 
@@ -52,7 +52,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 - **Average rating:** 6.66
 - **Average runtime:** 104.60 minutes
 
----
+
 
 ### Cluster 2: Exciting Horror Films
 
@@ -64,6 +64,7 @@ We then used KMeans clustering to group movies into three clusters based on thes
 - **Average rating:** 6.37
 - **Average runtime:** 95.32 minutes
 
+Here is a visualization of the genres of the movies in each cluster (bar graph).
 ---
 
 
@@ -74,7 +75,8 @@ t-SNE is another technique for reducing the data to two dimensions, but it focus
 
 After applying t-SNE, we used KMeans again to create four clusters. By looking at the clusters, we recognized distinct patterns between these subgroups, just like before. 
 
---- 
+![](tsnekmeans.png#center)
+
 **Cluster 0: Dramatic and/or Sci-Fi**
 
 - **Top 3 genres:**
@@ -84,7 +86,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 - **Average popularity:** 51.97
 - **Average rating:** 6.50
 
----
+
 
 **Cluster 1: Various Comedies**
 
@@ -95,7 +97,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 - **Average popularity:** 50.28
 - **Average rating:** 6.64
 
----
+
 
 **Cluster 2: Exciting Horror Films**
 
@@ -106,7 +108,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 - **Average popularity:** 51.25
 - **Average rating:** 6.46
 
----
+
 
 **Cluster 3: Rom-Coms**
 
@@ -116,6 +118,8 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
     - Comedy: 84.7%
 - **Average popularity:** 48.81
 - **Average rating:** 6.58
+
+Here is a visualization of the genres of the movies in each cluster (bar graph).
 
 
 ---
