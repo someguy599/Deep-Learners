@@ -7,9 +7,8 @@
                     {{ $brand := resources.Get "/assets/imgs/logo.png" }}
                     <img src="{{ $brand.RelPermalink }}" alt="Logo Image"
                         class="logo-image {{ if .Site.Params.logoInvert }}logo-invert{{ end }}" loading="lazy">
-                    {{ else }}
-                    {{ .Site.Title }}
                     {{ end }}
+                    <span class="site-title">{{ .Site.Title }}</span>
                 </a>
             </div>
             <div class="navbar-burger" id="navbar-burger">
@@ -21,9 +20,8 @@
         <div class="navbar-menu" id="navbar-menu">
             <div class="navbar-link-list">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="navbar-link-item">{{ index $.Site.Data.l10n .Identifier }}</a>
+                    <a href="{{ .URL }}" class="navbar-link-item">{{ .Name }}</a>
                 {{ end }}
-                <a href="/search" class="navbar-link-item">{{ index $.Site.Data.l10n "search" }}</a>
             </div>
             <div class="theme-toggle">
                 <div id="theme-toggle-btn">

@@ -1,0 +1,66 @@
+baseURL = 'https://ucd25-cosmos-deeplearners.github.io/'
+languageCode = "en"
+title = "Deep Learners"
+copyright = "Deep Learners" # Footer copyright.
+theme = "vortisil"
+pagination.pagerSize = 9
+hasCJKLanguage = true
+enableEmoji = true
+disableKinds = ["taxonomy","term"] # DO NOT MODIFY
+
+[params]
+  author = "Deep Learners" # Author name of the article.
+  logoImg = true # If false, the site title will display.
+  logoInvert = true # If the image logo needs to be turned on Image Colour Inversion.
+  math = true
+
+[params.comments]
+    enabled = false
+
+[params.meta]
+    description = "Too deep? We call that optimal ..." # Site description
+
+[menu]
+  [[menu.main]]
+    identifier = "Members"
+    name = "Members"
+    url = "/members"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "Mini Projects"
+    name = "Mini Projects"
+    url = "/mini-project/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "Daily Journal"
+    name = "Daily Journal"
+    url = "/daily-journal/"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "Final Project"
+    name = "Final Project"
+    url = "/final-project/"
+    weight = 30
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['$$', '$$']]
+    [markup.highlight]
+        style = "monokai"
+        tabWidth = 4
+        codeFences = true
+        guessSyntax = true
+
+
+
+[outputs]
+    home = ["HTML", "JSON"]
