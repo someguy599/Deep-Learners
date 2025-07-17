@@ -17,7 +17,7 @@ We were given a dataset of 300 random fictional movies and their respective genr
 
 Below is a small sample of the data we recieved. 
 
-![](movietable.png#center)
+{{< figure src="movietable.png" alt="Movie table" caption="Figure 1. Movie table" class="center" width="100%" >}}
 
 ---
 ## Data Analysis 
@@ -26,21 +26,20 @@ Below is a small sample of the data we recieved.
 
 First, we simply visualized the data and their individual features using basic plots such as histograms, box plots, and bar charts. 
 
-![](popularity.png#center)
+{{< figure src="popularity.png" alt="Popularity" caption="Figure 2. Popularity" class="center" width="100%" >}}
 
-![](runtime.png#center)
+{{< figure src="runtime.png" alt="Runtime" caption="Figure 3. Runtime" class="center" width="100%" >}}
 
-![](voteavg.png#center)
+{{< figure src="voteavg.png" alt="Voteavg" caption="Figure 4. Vote Average" class="center" width="100%" >}}
 
-![](genres.png#center)
-
+{{< figure src="genres.png" alt="Genre" caption="Figure 5. Genres" class="center" width="100%" >}}
 ### PCA and K-Means Clustering 
 
 Using PCA (Principal Component Analysis), we reduced the many features of the data down to just two principal components. This made it possible to plot all movies on a simple 2D graph, where similar movies appear closer together. 
 
 We then used KMeans clustering to group movies into three clusters based on these components. We then analyzed each cluster to see which genres were most common, and calculated the average popularity and ratings for each group.
 
-![](pcakmeans.png#center)
+{{< figure src="pcakmeans.png" alt="PCA K-Means" caption="Figure 6. PCA K-Means" class="center" width="100%" >}}
 
 **<u>Cluster 0: Dramatic and/or Sci-Fi</u>**
 
@@ -78,7 +77,8 @@ We then used KMeans clustering to group movies into three clusters based on thes
 
 Here is a visualization of the genres of the movies in each cluster (bar graph).
 
-![](genrepca.png#center)
+{{< figure src="genrepca.png" alt="Genre PCA" caption="Figure 7. Genre PCA" class="center" width="100%" >}}
+
 ---
 
 
@@ -89,7 +89,7 @@ t-SNE is another technique for reducing the data to two dimensions, but it focus
 
 After applying t-SNE, we used KMeans again to create four clusters. By looking at the clusters, we recognized distinct patterns between these subgroups, just like before. 
 
-![](tsnekmeans.png#center)
+{{< figure src="tsnekmeans.png" alt="t-SNE K-Means" caption="Figure 8. t-SNE K-Means" class="center" width="100%" >}}
 
 **<u>Cluster 0: Dramatic and/or Sci-Fi</u>**
 
@@ -135,7 +135,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 
 Here is a visualization of the genres of the movies in each cluster (bar graph).
 
-![](genretsne.png#center)
+{{< figure src="genretsne.png" alt="Genre t-SNE" caption="Figure 9. Genre t-SNE" class="center" width="100%" >}}
 ---
 
 ## Conclusion 
