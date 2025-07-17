@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<section class="hero" id="hero">
+
+    {{ $hero := resources.GetMatch "/assets/imgs/hero.*" }}
+    {{ $heroResize := $hero.Resize "800x webp"}}
+    <img src="{{ $heroResize.RelPermalink }}" alt="Hero Image" class="hero-image" loading="lazy">
+
+</section>
+
+<section class="intro">
+    <p style="text-align: center; font-weight: bold; font-size: 1rem;">
+        {{ .Site.Params.meta.description }}
+    </p>
+</section>
+
+{{ end }}
