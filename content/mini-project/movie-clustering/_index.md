@@ -136,6 +136,7 @@ After applying t-SNE, we used KMeans again to create four clusters. By looking a
 Here is a visualization of the genres of the movies in each cluster (bar graph).
 
 {{< figure src="genretsne.png" alt="Genre t-SNE" caption="Bar chart showing genre distribution across t-SNE-based clusters" class="center" width="100%" >}}
+
 ---
 
 ## Conclusion 
