@@ -17,7 +17,7 @@ draft: false
 
 ---
 
-### Gaurav Gupta
+## Gaurav Gupta
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
@@ -40,7 +40,7 @@ draft: false
 
 ---
 
-### Armaan Malkani
+## Armaan Malkani
 
 <div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
 
