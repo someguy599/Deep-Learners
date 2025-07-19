@@ -141,4 +141,4 @@ Here is a visualization of the genres of the movies in each cluster (bar graph).
 
 ## Conclusion 
 
-As we can see from the results, the K-Means clustering using the PCA and t-SNE dimension reduction methods were both helpful, with the latter being a bit more specific and splitting comedy movies into rom-coms and other comedies, allowing for better reccomendations for viewers. Overall, we learned the use and effectiveness of dimensionality reduction and clustering algorithms, both of which are unsupervised learning methods in
+As we can see from the results, the K-Means clustering using the PCA and t-SNE dimension reduction methods were both helpful, with the latter being a bit more specific and splitting comedy movies into rom-coms and other comedies, allowing for better reccomendations for viewers. Overall, we learned the use and effectiveness of dimensionality reduction and clustering algorithms, both of which are unsupervised learning methods.
