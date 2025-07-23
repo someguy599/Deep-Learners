@@ -1,5 +1,5 @@
 ---
-title: "Classifying Movies Into Subgroups Using Models"
+title: " Classifying Movies Into Subgroups Using Models"
 showToc: true
 tocOpen: true
 summary: We formed clusters of movie types based on various genres for better movie recommendations for viewers. 
