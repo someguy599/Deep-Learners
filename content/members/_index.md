@@ -19,7 +19,7 @@ draft: false
 
 ## Gaurav Gupta
 
-<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
 
   <img src="gauravgupta.jpg"
        alt="Gaurav"
@@ -42,7 +42,7 @@ draft: false
 
 ## Armaan Malkani
 
-<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
 
   <img src="armaan.png"
        alt="Armaan"
@@ -65,7 +65,7 @@ draft: false
 
 ## Jordan Han
 
-<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
 
   <img src="Jordanfr.jpg"
        alt="Jordan Han"
@@ -88,7 +88,7 @@ draft: false
 
 ## Aryav Semwal
 
-<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
 
   <img src="Aryav_Photo.jpg"
        alt="Aryav"
@@ -111,7 +111,7 @@ draft: false
 
 ## Brianna Zhang
 
-<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+<div class="member-block" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
 
   <img src="brianna.jpg"
        alt="Sally Brown"
@@ -129,3 +129,4 @@ draft: false
   </div>
   
 </div>
+
