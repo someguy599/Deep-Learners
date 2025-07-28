@@ -13,6 +13,6 @@ In the data cleaning stage, we standardized copper futures data from COMEX, SHFE
 
 {{< figure src="lme.png" alt="LME grpah" caption=" " class="center" width="100%" >}}
 
-{{< figure src="comex:ny.png" alt="COMEX grpah" caption=" " class="center" width="100%" >}}
+{{< figure src="comex.png" alt="COMEX grpah" caption=" " class="center" width="100%" >}}
 
 {{< figure src="shfe.png" alt="SHFE grpah" caption=" " class="center" width="100%" >}}
