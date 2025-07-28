@@ -26,7 +26,6 @@ MSE: 0.2997
 We Mean Square Error to find the quality of the prediction models. We used Random Forest Regression, a machine learning algorithm that predicts continuous values by combining the outputs of many decision trees. Each tree in the forest is trained on a random subset of the data and features, which helps reduce overfitting and improve generalization. The model averages the predictions of all the trees to produce a final result, making it more robust and accurate than a single decision tree. It’s particularly effective for handling nonlinear relationships and datasets with many input variables.
 
 
-[View interactive plot](https://github.com/ucd25-cosmos-deeplearners/ucd25-cosmos-deeplearners.github.io/edit/main/content/mini-project/copper/index.html)
 
 
 <iframe src="https://github.com/ucd25-cosmos-deeplearners/ucd25-cosmos-deeplearners.github.io/blob/main/content/mini-project/copper/index.html" width="100%" height="600" style="border:none;"></iframe>
