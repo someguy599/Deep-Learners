@@ -10,3 +10,9 @@ The goal of this project is to develop a machine learning model that predicts th
 In the data cleaning stage, we standardized copper futures data from COMEX, SHFE, and LME by converting column names to lowercase, setting datetime indices, and sorting rows chronologically. Missing values were forward-filled when appropriate. SHFE prices were converted from CNY per ton to USD per pound using daily exchange rates, while LME prices were similarly converted from USD per ton. This processing ensured consistency across datasets for modeling and analysis.
 
 ## Exploratory Data Analysis
+
+{{< figure src="lme.png" alt="LME grpah" caption=" " class="center" width="100%" >}}
+
+{{< figure src="comex:ny.png" alt="COMEX grpah" caption=" " class="center" width="100%" >}}
+
+{{< figure src="shfe.png" alt="SHFE grpah" caption=" " class="center" width="100%" >}}
