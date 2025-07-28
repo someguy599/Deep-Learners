@@ -28,14 +28,6 @@ We Mean Square Error to find the quality of the prediction models. We used Rando
 
 
 
-
-
-
-
-
-Ask ChatGPT
-
-
 <iframe src="https://github.com/ucd25-cosmos-deeplearners/ucd25-cosmos-deeplearners.github.io/blob/main/content/mini-project/copper/index.html" width="100%" height="600" style="border:none;"></iframe>
 
 
