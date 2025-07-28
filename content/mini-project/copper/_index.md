@@ -18,4 +18,4 @@ In the data cleaning stage, we standardized copper futures data from COMEX, SHFE
 {{< figure src="shfe.png" alt="SHFE grpah" caption=" " class="center" width="100%" >}}
 
 
-<iframe src="plot.html" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="index.html" width="100%" height="600" style="border:none;"></iframe>
