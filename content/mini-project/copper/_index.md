@@ -19,4 +19,3 @@ In the data cleaning stage, we standardized copper futures data from COMEX, SHFE
 
 [View Interactive Plot](plot.html)
 
-<iframe src="/copper/plot.html" width="100%" height="600" style="border:none;"></iframe>
