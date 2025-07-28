@@ -34,12 +34,6 @@ disableKinds = ["taxonomy","term"] # DO NOT MODIFY
     weight = 20
 
   [[menu.main]]
-    identifier = "Daily Journal"
-    name = "Daily Journal"
-    url = "/daily-journal/"
-    weight = 40
-
-  [[menu.main]]
     identifier = "Final Project"
     name = "Final Project"
     url = "/final-project/"
