@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+</head>
+<body>
+  <h3>Python Output:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    async function main() {
+      const pyodide = await loadPyodide();
+      let result = await pyodide.runPythonAsync(`
+%pip install yfinance
+import yfinance as yf
+import pandas as pd
+
+# ------------------------------------------------------------
+# 1.  Download daily front-month copper futures (COMEX)
+# ------------------------------------------------------------
+ticker = "HG=F"                # Copper continuous contract on Yahoo Finance
+start  = "2010-01-01"          # any start date you like
+end    = "2025-07-15"          # or leave end=None for “today”
+
+NY = yf.download(ticker, start=start, end=end, interval="1d")
+
+# Quick sanity-check
+NY.head()
+
+
+# --------------------
+
+NY.tail()
+NY['High'].info()
+NY
+
+# --------------------
+
+%pip install akshare
+%pip install pandas_datareader
+
+import akshare as ak
+import datetime as dt
+from pandas_datareader import data as web
+
+MT_TO_LB = 2204.62262    
+# main (dominant) copper contract from Sina Finance, date index ascending
+SHFE = ak.futures_main_sina(symbol="CU0",end_date="20250715",start_date="20150101")   # "CU0" -> SHFE copper continuous
+# rename to English
+SHFE = SHFE.rename(columns={
+    "日期": "date",
+    "开盘价": "open",
+    "最高价": "high",
+    "最低价": "low",
+    "收盘价": "close",
+    "成交量": "volume",
+    "持仓量": "open_interest",
+    "动态结算价": "settlement_price"
+})
+# ---- FX: CNY per USD (daily) --------------------------------
+fx = (
+    web.DataReader(
+        "DEXCHUS",      # Yuan per 1 USD (FRED)
+        "fred",
+        2005,
+        2025  # or leave end=None for “today”
+    )
+    .rename(columns={"DEXCHUS": "cny_per_usd"})
+    .ffill()                        # forward-fill weekends / holidays
+)
+
+# ---- merge & convert ----------------------------------------
+SHFE.set_index("date", inplace=True)        # make 'date' the index
+SHFE.sort_index(inplace=True)               # (optional) keep rows in chrono order
+
+SHFE = SHFE.join(fx, how="left")
+SHFE["usd_per_ton"] = SHFE["close"] / SHFE["cny_per_usd"]
+SHFE["usd_per_lb"]  = SHFE["usd_per_ton"] / MT_TO_LB
+
+SHFE.head()
+
+
+# --------------------
+
+SHFE.tail()
+
+# --------------------
+
+# The LME copper price is available MONTHLY from the IMF database
+start = dt.datetime(1990, 1, 1)
+LME= web.DataReader("PCOPPUSDM", "fred", start)   # IMF / LME cash price
+
+LME.rename(columns={"PCOPPUSDM": "usd_per_ton"}, inplace=True)
+LME["usd_per_lb"] = LME["usd_per_ton"] / MT_TO_LB
+
+LME.head()  
+
+# --------------------
+
+
+import matplotlib.pyplot as plt
+plt.figure(figsize=(12, 6))
+
+plt.plot(LME.index, LME["usd_per_lb"],
+         label="LME", linewidth=1.4, color="steelblue")
+
+plt.plot(SHFE.index, SHFE["usd_per_lb"],
+         label="SHFE main", linewidth=1.1, color="red")
+plt.plot(NY.index, NY["Close"],
+         label="COMEX", linewidth=1.1, color="darkorange")
+
+plt.title("Copper Prices: LME vs SHFE vs COMEX (USD per lb)")
+plt.xlabel("Date")
+plt.ylabel("Price")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.tight_layout()
+start_xlim = pd.Timestamp("2020-01-01")
+end_xlim   = pd.Timestamp("2025-07-19")
+plt.xlim(start_xlim, end_xlim)  
+plt.show()
+
+# --------------------
+
+from sklearn.model_selection import train_test_split
+
+# Example: split NY (COMEX) data using 'Close' as target
+X = NY.drop(columns=('Close'))
+y = NY[('Close', 'HG=F')]
+
+X_train, X_val, y_train, y_val = train_test_split(
+    X, y, test_size=0.2, shuffle=False
+)
+
+print("Training set:", X_train.shape, y_train.shape)
+print("Validation set:", X_val.shape, y_val.shape)
+
+# --------------------
+
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+
+# --------------------
+
+# --- Random Forest Regression for Copper Price Prediction New York ---
+
+# --- Random Forest Regression for Copper Price Prediction New York ---
+
+features = ['Open', 'High', 'Low', 'Volume']
+X = NY[features]
+y = NY['Close']
+# Shift previous day's features
+X['Open_prev'] = X['Open'].shift(1)
+X['High_prev'] = X['High'].shift(1)
+X['Low_prev'] = X['Low'].shift(1)
+X['Volume_prev'] = X['Volume'].shift(1)
+
+X = X.drop(X.index[0])
+X.drop(columns=['High', 'Low', 'Volume'], inplace=True)
+X = X.dropna()  # Remove rows with NaN values after shifting
+
+X.head()
+
+ # Remove rows with NaN values after shifting
+#y.head()
+
+
+# --------------------
+
+# The shifted columns are added as strings, not tuples
+# The shifted columns are now strings, not tuples
+model_features = ['Open_prev', 'High_prev', 'Low_prev', 'Volume_prev', 'Open']
+
+X_model = X[model_features]
+y_model = y.loc[X_model.index]
+
+# Update X and y for train/test split
+X = X_model
+y = y_model
+# Split data (already shown above, but for clarity)
+from sklearn.model_selection import train_test_split
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, shuffle=False)
+
+# Train Random Forest
+rf = RandomForestRegressor(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+
+# Predict
+y_pred = rf.predict(X_val)
+
+# Evaluate
+mse = mean_squared_error(y_val, y_pred)
+r2 = r2_score(y_val, y_pred)
+print("New York Copper Price Prediction using Random Forest")
+print(f"Random Forest MSE: {mse:.4f}")
+print(f"Random Forest R2: {r2:.4f}")
+
+# Plot actual vs predicted
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10,5))
+plt.plot(y_val.index, y_val, label='Actual', color='blue')
+plt.plot(y_val.index, y_pred, label='Predicted', color='red')
+plt.title('NEW YORK: Random Forest: Actual vs Predicted Copper Price')
+plt.xlabel('Date')
+plt.ylabel('Copper Price (USD/lb)')
+plt.legend()
+plt.show()
+
+# --------------------
+
+# --- Random Forest Regression for Copper Price Prediction Shanghai---
+
+features = ['Open', 'High', 'Low', 'Volume']  # You can add more features if available
+X = NY[features]
+y = NY['Close']
+
+# Split data (already shown above, but for clarity)
+from sklearn.model_selection import train_test_split
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, shuffle=False)
+
+# Train Random Forest
+rf = RandomForestRegressor(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+
+# Predict
+y_pred = rf.predict(X_val)
+
+# Evaluate
+mse = mean_squared_error(y_val, y_pred)
+r2 = r2_score(y_val, y_pred)
+print("New York Copper Price Prediction using Random Forest")
+print(f"Random Forest MSE: {mse:.4f}")
+print(f"Random Forest R2: {r2:.4f}")
+
+# Plot actual vs predicted
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10,5))
+plt.plot(y_val.index, y_val, label='Actual', color='blue')
+plt.plot(y_val.index, y_pred, label='Predicted', color='red')
+plt.title('NEW YORK: Random Forest: Actual vs Predicted Copper Price')
+plt.xlabel('Date')
+plt.ylabel('Copper Price (USD/lb)')
+plt.legend()
+plt.show()
+
+# --------------------
+
+# Evaluate
+y_train_pred = rf.predict(X_train)
+mse_train = mean_squared_error(y_train, y_train_pred)
+mse_val = mean_squared_error(y_val, y_pred)
+print(f"Random Forest Training MSE: {mse_train:.4f}")
+print(f"Random Forest Validation MSE: {mse_val:.4f}")
+r2 = r2_score(y_val, y_pred)
+print(f"Random Forest R2: {r2:.4f}")
+
+# --------------------
+
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
+
+def prepare_xy(df, price_col='Close', feature_cols=None):
+    # Use previous day's features to predict today's close
+    if feature_cols is None:
+        feature_cols = ['Open', 'High', 'Low', 'Volume']
+    X = df[feature_cols].shift(1).iloc[1:101]  # first 100 days, shifted
+    y = df[price_col].iloc[1:101]              # predict today's close
+    X_pred = df[feature_cols].shift(1).iloc[101:201]  # next 100 days for prediction
+    y_true = df[price_col].iloc[101:201]
+    return X, y, X_pred, y_true
+
+# --- COMEX/NY ---
+X_ny, y_ny, X_ny_pred, y_ny_true = prepare_xy(NY, price_col='Close', feature_cols=['Open', 'High', 'Low', 'Volume'])
+rf_ny = RandomForestRegressor(n_estimators=100, random_state=42)
+rf_ny.fit(X_ny, y_ny)
+y_ny_pred = rf_ny.predict(X_ny_pred)
+mse_ny = mean_squared_error(y_ny_true, y_ny_pred)
+
+plt.figure(figsize=(10,5))
+plt.plot(y_ny_true.index, y_ny_true, label='Actual', color='blue')
+plt.plot(y_ny_true.index, y_ny_pred, label='Predicted', color='red')
+split_date = y_ny_true.index[0]
+plt.axvline(x=split_date, color='gray', linestyle='--', label='Train/Test Split')
+plt.title('COMEX/NY: Random Forest 1-day-ahead Close Price')
+plt.xlabel('Date')
+plt.ylabel('Copper Price (USD/lb)')
+plt.legend()
+plt.show()
+print(f"COMEX/NY MSE: {mse_ny:.4f}")
+
+
+# --- SHFE (Shanghai) ---
+# Use 'close' as price, and ['open', 'high', 'low', 'volume'] as features
+X_sh, y_sh, X_sh_pred, y_sh_true = prepare_xy(SHFE, price_col='close', feature_cols=['open', 'high', 'low', 'volume'])
+rf_sh = RandomForestRegressor(n_estimators=100, random_state=42)
+rf_sh.fit(X_sh, y_sh)
+y_sh_pred = rf_sh.predict(X_sh_pred)
+mse_sh = mean_squared_error(y_sh_true, y_sh_pred)
+
+plt.figure(figsize=(10,5))
+plt.plot(y_sh_true.index, y_sh_true, label='Actual', color='blue')
+plt.plot(y_sh_true.index, y_sh_pred, label='Predicted', color='red')
+split_date = y_sh_true.index[0]
+plt.axvline(x=split_date, color='gray', linestyle='--', label='Train/Test Split')
+plt.title('SHFE: Random Forest 1-day-ahead Close Price')
+plt.xlabel('Date')
+plt.ylabel('Copper Price (CNY/ton)')
+plt.legend()
+plt.show()
+print(f"SHFE MSE: {mse_sh:.4f}")
+
+# --- LME (London) ---
+# LME is monthly, so fewer points; use 'usd_per_lb' as price, features can be just previous price (since no OHLCV)
+if 'usd_per_lb' in LME.columns:
+    LME_feat = LME[['usd_per_lb']].copy()
+    X_lme = LME_feat.shift(1).iloc[1:101]
+    y_lme = LME['usd_per_lb'].iloc[1:101]
+    X_lme_pred = LME_feat.shift(1).iloc[101:201]
+    y_lme_true = LME['usd_per_lb'].iloc[101:201]
+    rf_lme = RandomForestRegressor(n_estimators=100, random_state=42)
+    rf_lme.fit(X_lme, y_lme)
+    y_lme_pred = rf_lme.predict(X_lme_pred)
+    mse_lme = mean_squared_error(y_lme_true, y_lme_pred)
+
+    plt.figure(figsize=(10,5))
+    plt.plot(y_lme_true.index, y_lme_true, label='Actual', color='blue')
+    plt.plot(y_lme_true.index, y_lme_pred, label='Predicted', color='red')
+    split_date = y_lme_true.index[0]
+    plt.axvline(x=split_date, color='gray', linestyle='--', label='Train/Test Split')
+    plt.title('LME: Random Forest 1-month-ahead Close Price')
+    plt.xlabel('Date')
+    plt.ylabel('Copper Price (USD/lb)')
+    plt.legend()
+    plt.show()
+
+    print(f"LME MSE: {mse_lme:.4f}")
+else:
+    print("LME data not available or missing 'usd_per_lb' column.")
+
+# --------------------
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestRegressor
+import ipywidgets as widgets
+from IPython.display import display, clear_output
+
+# Your dataframes should already be loaded:
+# NY, SHFE, LME
+
+# Dictionary of exchange data
+data_dict = {
+    'COMEX/NY': NY,
+    'SHFE': SHFE,
+    'LME': LME
+}
+
+# Normalize and clean each DataFrame
+for name, df in data_dict.items():
+    # Flatten MultiIndex columns and lowercase names
+    df.columns = ['_'.join(col).strip().lower() if isinstance(col, tuple) else str(col).lower() for col in df.columns]
+    df.index = pd.to_datetime(df.index)  # Ensure datetime index
+    df.sort_index(inplace=True)
+
+# UI Elements
+exchange_dropdown = widgets.Dropdown(
+    options=list(data_dict.keys()),
+    description='Exchange:',
+    value='COMEX/NY'
+)
+
+date_input = widgets.Text(
+    description='Date (YYYY-MM-DD):',
+    value='2021-06-15',
+    placeholder='YYYY-MM-DD',
+)
+
+run_button = widgets.Button(
+    description="Predict",
+    button_style='success'
+)
+
+output = widgets.Output()
+
+# Button click handler
+def on_button_click(b):
+    output.clear_output()
+    with output:
+        exchange_name = exchange_dropdown.value
+        user_input = date_input.value.strip()
+
+        # Validate and convert input date
+        try:
+            input_date = pd.to_datetime(user_input)
+        except:
+            print("Invalid date format. Please use YYYY-MM-DD.")
+            return
+
+        df = data_dict[exchange_name]
+        index_dates = df.index
+
+        # Adjust the input date if it's out of bounds
+        if input_date < index_dates[1]:  # must have one prior day
+            target_datetime = index_dates[1]
+            print(f"Date too early. Using earliest valid date: {target_datetime.date()}")
+        elif input_date > index_dates[-1]:
+            target_datetime = index_dates[-1]
+            print(f"Date too late. Using latest available date: {target_datetime.date()}")
+        else:
+            # Find nearest date in case it's missing
+            target_datetime = max([d for d in index_dates if d <= input_date])
+
+        columns = df.columns.tolist()
+
+        # Identify price and feature columns
+        if 'usd_per_lb' in columns:
+            price_col = 'usd_per_lb'
+            feature_cols = [price_col]
+        else:
+            feature_candidates = ['open', 'high', 'low', 'volume']
+            feature_cols = [col for col in columns if any(f in col for f in feature_candidates)]
+            close_candidates = [col for col in columns if 'close' in col]
+            if close_candidates:
+                price_col = close_candidates[0]
+            else:
+                print("Could not identify a 'close' column.")
+                return
+
+        idx = df.index.get_loc(target_datetime)
+        if idx == 0:
+            print("Not enough data before the selected date to train the model.")
+            return
+
+        # Prepare training and prediction data
+        X = df[feature_cols].shift(1).iloc[:idx]
+        y = df[price_col].iloc[:idx]
+        X_pred = df[feature_cols].shift(1).iloc[idx:idx+1]
+        y_true = df[price_col].iloc[idx]
+
+        if X_pred.isnull().any().any():
+            print("Missing values in prediction input. Skipping.")
+            return
+
+        model = RandomForestRegressor(n_estimators=100, random_state=42)
+        model.fit(X, y)
+        y_pred = model.predict(X_pred)[0]
+
+        print(f"Prediction for {exchange_name} on {target_datetime.date()}:")
+        print(f"  Actual close: {y_true:.4f}")
+        print(f"  Predicted close: {y_pred:.4f}")
+        print(f"  Difference: {y_pred - y_true:+.4f}")
+
+        # Plot actual values and prediction marker
+        plt.figure(figsize=(10,5))
+        plt.plot(df.index[:idx+1], df[price_col].iloc[:idx+1], label='Actual', color='blue')
+        plt.axvline(x=target_datetime, color='gray', linestyle='--', label='Prediction Day')
+        plt.scatter([target_datetime], [y_pred], color='red', label='Predicted', zorder=5)
+        plt.title(f"{exchange_name}: Prediction on {target_datetime.date()}")
+        plt.xlabel('Date')
+        plt.ylabel('Closing Price')
+        plt.legend()
+        plt.grid(True)
+        plt.show()
+
+run_button.on_click(on_button_click)
+
+# Display UI
+display(widgets.VBox([exchange_dropdown, date_input, run_button, output]))
+
+      `);
+      document.getElementById("output").textContent = result;
+    }
+    main();
+  </script>
+</body>
+</html>
