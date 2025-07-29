@@ -11,6 +11,7 @@ We obtained our data as csv files from Kaggle from the [European Soccer Database
 
 ## Data Cleaning
 ### Cleaning Player Dataset
+We merged two player attributes datasets into one dataframe for easier indexing. 
 
 ### Cleaning Match and Team Dataset
 
