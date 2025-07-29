@@ -18,7 +18,7 @@ disableKinds = ["taxonomy","term"] # DO NOT MODIFY
     enabled = false
 
 [params.meta]
-    description = "Too deep? We call that optimal ..." # Site description
+    description = "COSMOS UC Davis 2025" # Site description
 
 [menu]
   [[menu.main]]
