@@ -20,6 +20,8 @@ We merged our two player attributes datasets into one dataframe for easier index
 ### Cleaning Match and Team Dataset
 
 ## Exploratory Data Analysis
+Below is a histogram and KDE (smoothed out histogram) of player potential of all the more than 11,000 players in our dataset. 
+![](Potential_Histogram.png#center)
 
 ## Modeling
 
