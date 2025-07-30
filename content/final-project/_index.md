@@ -21,7 +21,7 @@ We merged our two player attributes datasets into one dataframe for easier index
 
 ## Exploratory Data Analysis
 Below is a histogram and KDE (smoothed out histogram) of player potential of all the more than 11,000 players in our dataset. Player potential refers to a player's future ability to perform at a high level. 
-![](Potential_Histogram.png#center)
+![](Potential_Histogram.jpg#center)
 
 ## Modeling
 
