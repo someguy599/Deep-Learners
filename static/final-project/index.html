@@ -1,122 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
+  <meta charset="UTF-8">
+  <title>Final Project – Deep Learners</title>
+
+  <!-- Theme CSS from Hugo -->
   <link rel="stylesheet" href="/assets/scss/custom.min.a46b5c4dd8dbf5e2b0ab5b77d0a528d908680aa0f2070ba62c3b24df060cebaf.css">
   <link rel="stylesheet" href="/assets/scss/main.min.500f3084537688a33ff37c9efe9c0eb06237a97fed6b773316987c9b233591e6.css">
-  <meta charset="UTF-8">
-  <title>Dual Image Carousel + Markdown Viewer</title>
+
+  <!-- Font Awesome & KaTeX -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+  <!-- Markdown Renderer -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
     .carousel-container {
       position: relative;
-      width: 900px;
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto;
       overflow: hidden;
-      border: 0px solid #ccc;
       border-radius: 10px;
-      margin-bottom: 40px;
+      border: 1px solid #ccc;
     }
+
     .carousel-track {
       display: flex;
       transition: transform 0.6s ease;
       width: max-content;
     }
+
     .carousel-slide {
       display: flex;
-      flex-direction: row;
       width: 900px;
       justify-content: space-between;
       padding: 20px;
-      box-sizing: border-box;
     }
+
     .image-wrapper {
       width: 420px;
       text-align: center;
     }
+
     .image-wrapper img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     }
+
     .label {
       font-weight: bold;
       margin-bottom: 8px;
     }
+
     .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       font-size: 40px;
-      background-color: rgba(255,255,255,0.8);
+      background-color: rgba(255, 255, 255, 0.8);
       border: none;
       cursor: pointer;
       padding: 10px;
       border-radius: 50%;
       user-select: none;
+      z-index: 2;
     }
-    .arrow.left { left: 10px; }
-    .arrow.right { right: 10px; }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
     .markdown-viewer {
-      width: 100%;
-      max-width: 90vw;
-      border: 0px solid #aaa;
-      border-radius: 8px;
+      background: var(--background);
+      color: var(--foreground);
       padding: 20px;
-      background: #fafafa;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 40px;
     }
   </style>
 </head>
 <body>
 
-<!-- Image Carousel -->
-<div class="carousel-container">
-  <div class="carousel-track" id="carouselTrack">
-    <div class="carousel-slide">
-      <div class="image-wrapper">
-        <div class="label">Agglomerative Clustering</div>
-        <img src="agglo.png" alt="Agglo">
+<!-- Hugo navbar clone -->
+<header>
+  <nav class="navbar">
+    <div class="navbar-top" id="top">
+      <div class="navbar-logo">
+        <a href="/" class="logo-text" style="font-family: jicaleta">
+          <img src="/assets/imgs/logo.png" alt="Logo Image" class="logo-image logo-invert" loading="lazy">
+          <span class="site-title">Deep Learners</span>
+        </a>
       </div>
-      <div class="image-wrapper">
-        <div class="label">Agglomerative Clustering Cluster Attributes</div>
-        <img src="agglobarchart.png" alt="Agglo Bar">
-      </div>
-    </div>
-    <div class="carousel-slide">
-      <div class="image-wrapper">
-        <div class="label">Gausian Mixsture Model Clustering</div>
-        <img src="GMM.png" alt="GMM">
-      </div>
-      <div class="image-wrapper">
-        <div class="label">Gaussian Mixture Model Cluster Attributes</div>
-        <img src="gmmbar.png" alt="GMM">
+      <div class="navbar-burger" id="navbar-burger">
+        <span></span><span></span><span></span>
       </div>
     </div>
-    <div class="carousel-slide">
-      <div class="image-wrapper">
-        <div class="label">K-means Clustering</div>
-        <img src="K-means.png" alt="K-means">
+    <div class="navbar-menu" id="navbar-menu">
+      <div class="navbar-link-list">
+        <a href="/members" class="navbar-link-item">Members</a>
+        <a href="/mini-project/" class="navbar-link-item">Mini Projects</a>
+        <a href="/final-project/" class="navbar-link-item">Final Project</a>
       </div>
-      <div class="image-wrapper">
-        <div class="label">K-means Cluster Attributes</div>
-        <img src="K-meansBarchar.pngt" alt="K-means">
+      <div class="theme-toggle">
+        <div id="theme-toggle-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#1a1a1a" d="M10 2c-1.82.0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0010-10A10 10 0 0010 2"/></svg>
+        </div>
       </div>
     </div>
+  </nav>
+</header>
+
+<main>
+  <!-- Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <div class="image-wrapper">
+          <div class="label">Agglomerative Clustering</div>
+          <img src="agglo.png" alt="Agglo">
+        </div>
+        <div class="image-wrapper">
+          <div class="label">Agglomerative Clustering Cluster Attributes</div>
+          <img src="agglobarchart.png" alt="Agglo bar">
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="image-wrapper">
+          <div class="label">GMM</div>
+          <img src="GMM.png" alt="GMM">
+        </div>
+        <div class="image-wrapper">
+          <div class="label">K-means</div>
+          <img src="K-means.png" alt="K-means">
+        </div>
+      </div>
+    </div>
+    <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
   </div>
-  <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
-  <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
-</div>
 
-<!-- Markdown Viewer -->
-<div id="markdown-content" class="markdown-viewer">Loading markdown...</div>
+  <!-- Markdown content -->
+  <div id="markdown-content" class="markdown-viewer">Loading markdown...</div>
+</main>
 
+<footer class="footer">
+  <span>&copy; 2025 Deep Learners. All rights reserved.</span>
+  <span>Powered by <a href="https://gohugo.io">Hugo</a> & <a href="https://github.com/khitezza/vortisil/">Vortisil</a>.</span>
+</footer>
+
+<!-- Scripts -->
 <script>
+  // Theme loader
+  (function () {
+    const theme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+
+  // Markdown renderer
+  fetch('report.md')
+    .then(res => res.text())
+    .then(md => {
+      document.getElementById('markdown-content').innerHTML = marked.parse(md);
+      renderMathInElement(document.getElementById('markdown-content'), {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false }
+        ],
+        throwOnError: false
+      });
+    });
+
+  // Carousel
   let currentSlide = 0;
   const track = document.getElementById('carouselTrack');
   const totalSlides = document.querySelectorAll('.carousel-slide').length;
@@ -126,18 +192,10 @@
     const offset = -currentSlide * 900;
     track.style.transform = `translateX(${offset}px)`;
   }
-
-  // Load and render Markdown file
-  fetch('report.md')
-    .then(res => res.text())
-    .then(md => {
-      document.getElementById('markdown-content').innerHTML = marked.parse(md);
-    })
-    .catch(err => {
-      document.getElementById('markdown-content').innerText = "Failed to load markdown.";
-      console.error(err);
-    });
 </script>
+
+<script defer src="/assets/js/main.5c74bbbd98d0e1f0057ece22154fe165db4d0207ad84eeee2cd380f8c5abb45a.js"></script>
+<script defer src="/assets/js/site-theme-toggle.f98aebaa63c2cab155e441d6ec6c3e84519445a3d13185c0b6729fd4dd94dc4f.js"></script>
 
 </body>
 </html>
