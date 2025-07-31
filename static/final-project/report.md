@@ -59,6 +59,9 @@ Here, we examined how football players’ attributes change as they age. We used
 
 The chart shows that physical traits like stamina, sprint speed, acceleration, and agility increase until around age 26 to 28 and then drop quickly after age 30. On the other hand, reactions continue to improve slightly with age and stay high even as the player gets older. This tells us that while older players may lose physical speed and movement, they often remain mentally sharp and experienced, which can still make them very effective on the field.
 
+![](cormatrix.png)
+To better understand how these attributes are related, we created a correlation matrix. The heatmap shows that physical traits such as sprint speed, agility, and stamina are strongly linked to one another and all decrease with age, while reactions are positively correlated with age. This means players who are quick often also have strong stamina and agility. Overall, the analysis shows that aging affects physical abilities more than mental sharpness, which helps explain why older players can still perform well in roles that rely on awareness and decision-making rather than speed.
+
 ## Modeling
 
 Additionally, we created a neural network to predict a soccer player's rating for the next season based on their attributes and ratings from the past three seasons. We initially experimented with regression models like OLS, Lasso, and Ridge for rating prediction, but these models struggled to account for time series data from a given player. 
