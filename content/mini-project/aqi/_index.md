@@ -104,5 +104,5 @@ We re-analyzed the data with linear regression to acquire a line of best fit. Ou
 
 ---
 ## Interactive Map Showing County Data
-<iframe src="/plotly/income_vs_air_pollution_regression.html" width="100%" height="400px" style="border:none;"></iframe>
+<iframe src="/plotly/" width="100%" height="400px" style="border:none;"></iframe>
 
