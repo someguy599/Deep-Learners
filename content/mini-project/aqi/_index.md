@@ -100,9 +100,9 @@ Next, we created a scatterplot of air pollution vs. income for all California co
 
 We re-analyzed the data with linear regression to acquire a line of best fit. Our data's correlation coefficient $r \approx{-0.30}$ indicates a weak, negative correlation between income and air pollution. In other words, the lower the air pollution for a county, the higher the predicted average income.
 
-![](sctr.png#center)
+<iframe src="/plotly/income_vs_air_pollution_regression.html" width="100%" height="400px" style="border:none;"></iframe>
 
 ---
 ## Interactive Map Showing County Data
-<iframe src="/plotly/income_vs_air_pollution_regression.html" width="100%" height="400px" style="border:none;"></iframe>
+<iframe src="/plotly/income_aqi.html" width="100%" height="400px" style="border:none;"></iframe>
 
