@@ -49,7 +49,7 @@ Goalie attributes         and crossing to ball control
 
 ### Effect of age on players
 
-![](attributesvsage.png)
+![](attributevsage.png)
 
 In this analysis, we examined how football players’ attributes change as they age. We used each player’s birthday and the date of their most recent data to calculate their age. Then we grouped the players by age and found the average values for five key traits: reactions, stamina, acceleration, sprint speed, and agility. The line chart we created shows how these averages shift as players get older.
 
