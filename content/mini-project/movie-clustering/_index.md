@@ -26,11 +26,11 @@ Below is a small sample of the data we recieved.
 
 First, we simply visualized the data and their individual features using basic plots such as histograms, box plots, and bar charts. 
 
-{{< figure src="popularity.png" alt="Popularity" caption="Distribution of movie popularity scores across the dataset" class="center" width="100%" >}}
+<iframe src="/plotly/popularity_histogram.html" width="100%" height="400px" style="border:none;"></iframe>
 
-{{< figure src="runtime.png" alt="Runtime" caption="Distribution of movie runtimes in minutes" class="center" width="100%" >}}
+<iframe src="/plotly/runtime_box_plot.html" width="100%" height="400px" style="border:none;"></iframe>
 
-{{< figure src="voteavg.png" alt="Voteavg" caption="Distribution of average user ratings for movies" class="center" width="100%" >}}
+<iframe src="/plotly/vote_average_histogram.html" width="100%" height="400px" style="border:none;"></iframe>
 
 {{< figure src="genres.png" alt="Genre" caption="Frequency of different genres in the movie dataset" class="center" width="100%" >}}
 ### PCA and K-Means Clustering 
