@@ -19,6 +19,8 @@ We merged our two player attributes datasets into one dataframe for easier index
 
 ### Cleaning Match and Team Dataset
 
+
+
 ## Exploratory Data Analysis
 Below is a histogram and KDE (smoothed out histogram) of player potential of all the more than 11,000 players in our dataset. Player potential refers to a player's future ability to perform at a high level, and this value ranges from 0 to 100. The distribution is approximately normally disitrbuted with most players' ratings between 60 and 90. 
 ![](Potential_Histogram.jpg#center)
@@ -26,6 +28,14 @@ Below is a histogram and KDE (smoothed out histogram) of player potential of all
 Here is a correlation matrix between the numeric variables for our player dataset. 
 ![](Correlation_Matrix.png#center)
 
+Below is a K-means clustering algorithm on the players after reducing the dimensions using Principal Component Analysis. 
+
+
+
 ## Modeling
 
+We created to predict the performance of a team throughout a season. And 
+
 ## Conclusion
+
+
