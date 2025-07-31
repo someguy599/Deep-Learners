@@ -23,7 +23,7 @@ We merged our two player attributes datasets into one dataframe for easier index
 
 ## Exploratory Data Analysis
 Below is a histogram and KDE (smoothed out histogram) of player potential of all the more than 11,000 players in our dataset. Player potential refers to a player's future ability to perform at a high level, and this value ranges from 0 to 100. The distribution is approximately normally disitrbuted with most players' ratings between 60 and 90. 
-![](PotentialHistogram(Normal).jpg#center)
+![](PotentialHistogram(Normal).jpg#center){ width=300px height=200px }
 
 ###Correlation Matrices
 
@@ -33,7 +33,7 @@ Here is a correlation matrix between the numeric variables for our player datase
 Some correlations jump out namely the ...
 
 Goalie attributes         and crossing to ball control
-![](heatmap.png#center) ![](heatmap2.png#center)
+![](heatmap.png#center){ width=300px height=300px } ![](heatmap2.png#center){ width=300px height=300px }
 
 
 
