@@ -1,14 +1,23 @@
+Here's your updated HTML with the `marked.js` setup added. I’ve removed the non-functional `<iframe>` and replaced it with a **Markdown viewer** that dynamically loads and renders a `.md` file (e.g., `README.md`) using JavaScript.
+
+---
+
+### ✅ Updated HTML with `marked.js` Integration
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dual Image Carousel</title>
+  <title>Dual Image Carousel + Markdown Viewer</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     body {
       font-family: sans-serif;
       margin: 40px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
 
     .carousel-container {
@@ -17,6 +26,7 @@
       overflow: hidden;
       border: 2px solid #ccc;
       border-radius: 10px;
+      margin-bottom: 40px;
     }
 
     .carousel-track {
@@ -70,10 +80,21 @@
     .arrow.right {
       right: 10px;
     }
+
+    .markdown-viewer {
+      width: 900px;
+      max-width: 90vw;
+      border: 2px solid #aaa;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fafafa;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
 
+<!-- Image Carousel -->
 <div class="carousel-container">
   <div class="carousel-track" id="carouselTrack">
     <!-- Slide 1 -->
@@ -105,7 +126,8 @@
   <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
 </div>
 
-<iframe class="markdown-viewer" src="markdown.html"></iframe>
+<!-- Markdown Viewer -->
+<div id="markdown-content" class="markdown-viewer">Loading markdown...</div>
 
 <script>
   let currentSlide = 0;
@@ -117,7 +139,29 @@
     const offset = -currentSlide * 900;
     track.style.transform = `translateX(${offset}px)`;
   }
+
+  // Load and render Markdown file
+  fetch('_index.md') // replace with your markdown file name
+    .then(res => res.text())
+    .then(md => {
+      document.getElementById('markdown-content').innerHTML = marked.parse(md);
+    })
+    .catch(err => {
+      document.getElementById('markdown-content').innerText = "Failed to load markdown file.";
+      console.error("Markdown load error:", err);
+    });
 </script>
 
 </body>
 </html>
+```
+
+---
+
+### 📌 What You Need to Do:
+
+1. Place this HTML file in the same directory as your `.md` file.
+2. Change `fetch('README.md')` to match your Markdown file name.
+3. Open the HTML file in a browser — it will display the image carousel **and** the rendered Markdown.
+
+Let me know if you’d like to add a live editor, syntax highlighting, or convert `.md` files on the fly from user input.
