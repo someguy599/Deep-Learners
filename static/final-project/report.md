@@ -30,10 +30,17 @@ Below is a histogram and KDE (smoothed out histogram) of player potential of all
 
 ###Correlation Matrices
 
-Here is a correlation matrix between the numeric variables for our player dataset. 
+This heatmap shows the correlation matrix between different player attributes. Correlation values range from -1 to 1, where:
+- 1 means two traits increase together,
+- -1 means one increases while the other decreases,
+- 0 means no relationship.
 ![](Correlation_Matrix.png#center)
 
-Some correlations jump out namely the ...
+- Overall rating and potential are strongly correlated (0.77), as expected. Skills like short passing, ball control, and vision also show strong connections, indicating that good passers tend to be well-rounded technically.
+- Agility, acceleration, and sprint speed are closely related, representing physical quickness.
+- Defensive stats such as interceptions and tackling are related but not strongly connected to offensive traits.
+- Goalkeeper attributes form a separate group, highly correlated with each other but negatively correlated with outfield player skills.
+
 
 Goalie attributes         and crossing to ball control
 ![](heatmap.png#center) ![](heatmap2.png#center)
@@ -41,9 +48,12 @@ Goalie attributes         and crossing to ball control
 
 ### Effect of age on players
 
-![](attributesvsage.png)
+![](attributevsage.png)
 
-![]
+In this analysis, we examined how football players’ attributes change as they age. We used each player’s birthday and the date of their most recent data to calculate their age. Then we grouped the players by age and found the average values for five key traits: reactions, stamina, acceleration, sprint speed, and agility. The line chart we created shows how these averages shift as players get older.
+
+The chart shows that physical traits like stamina, sprint speed, acceleration, and agility increase until around age 26 to 28 and then drop quickly after age 30. On the other hand, reactions continue to improve slightly with age and stay high even as the player gets older. This tells us that while older players may lose physical speed and movement, they often remain mentally sharp and experienced, which can still make them very effective on the field.
+
 ## Modeling
 
 Additionally, we created a neural network to predict a soccer player's rating for the next season based on their attributes and ratings from the past three seasons. We initially experimented with regression models like OLS, Lasso, and Ridge for rating prediction, but these models struggled to account for time series data from a given player. 
