@@ -49,6 +49,8 @@ Below is a GMM clustering algorithm on the players after using PCA.
 
 Below is a Agglomerative Hierarchical clustering algorithm on the players after using PCA. 
 
+![](agglo.png#center)
+![](agglobarchart.png#center)
 
 
 ## Modeling
