@@ -28,7 +28,15 @@ Below is a histogram and KDE (smoothed out histogram) of player potential of all
 Here is a correlation matrix between the numeric variables for our player dataset. 
 ![](Correlation_Matrix.png#center)
 
-Below is a K-means clustering algorithm on the players after reducing the dimensions using Principal Component Analysis. 
+Below is a K-means clustering algorithm on the players after reducing the dimensions using Principal Component Analysis(PCA). 
+
+![](K-means.png#center)
+
+Below is a GMM clustering algorithm on the players after using PCA. 
+
+
+
+Below is a Agglomerative Hierarchical clustering algorithm on the players after using PCA. 
 
 
 
