@@ -19,11 +19,10 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <style>
-
     .carousel-container {
       position: relative;
       width: 100%;
-      max-width: 1600px !important;
+      max-width: 1600px;
       margin: 40px auto;
       overflow: hidden;
       border-radius: 10px;
@@ -126,31 +125,49 @@
 <main>
   <!-- Carousel -->
   <div class="carousel-container">
-    <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-slide">
-        <div class="image-wrapper">
-          <div class="label">Agglomerative Clustering</div>
-          <img src="agglo.png" alt="Agglo">
-        </div>
-        <div class="image-wrapper">
-          <div class="label">Agglomerative Clustering Cluster Attributes</div>
-          <img src="agglobarchart.png" alt="Agglo bar">
-        </div>
+  <div class="carousel-track" id="carouselTrack">
+    
+    <!-- Slide 1: Agglomerative -->
+    <div class="carousel-slide">
+      <div class="image-wrapper">
+        <div class="label">Agglomerative Clustering</div>
+        <img src="agglo.png" alt="Agglomerative Clustering">
       </div>
-      <div class="carousel-slide">
-        <div class="image-wrapper">
-          <div class="label">GMM</div>
-          <img src="GMM.png" alt="GMM">
-        </div>
-        <div class="image-wrapper">
-          <div class="label">K-means</div>
-          <img src="K-means.png" alt="K-means">
-        </div>
+      <div class="image-wrapper">
+        <div class="label">Agglomerative Clustering Cluster Attributes</div>
+        <img src="agglobarchart.png" alt="Agglomerative Cluster Attributes">
       </div>
     </div>
-    <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+
+    <!-- Slide 2: GMM -->
+    <div class="carousel-slide">
+      <div class="image-wrapper">
+        <div class="label">GMM Clustering</div>
+        <img src="GMM.png" alt="GMM Clustering">
+      </div>
+      <div class="image-wrapper">
+        <div class="label">GMM Cluster Attributes</div>
+        <img src="gmmbar.png" alt="GMM Cluster Attributes">
+      </div>
+    </div>
+
+    <!-- Slide 3: K-means -->
+    <div class="carousel-slide">
+      <div class="image-wrapper">
+        <div class="label">K-means Clustering</div>
+        <img src="K-means.png" alt="K-means Clustering">
+      </div>
+      <div class="image-wrapper">
+        <div class="label">K-means Cluster Attributes</div>
+        <img src="K-meansBarchart.png" alt="K-means Cluster Attributes">
+      </div>
+    </div>
+
   </div>
+  <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
 
   <!-- Markdown content -->
   <div id="markdown-content" class="markdown-viewer">Loading markdown...</div>
