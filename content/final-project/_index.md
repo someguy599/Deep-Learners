@@ -34,6 +34,7 @@ Below is a K-means clustering algorithm on the players after reducing the dimens
 
 Below is a GMM clustering algorithm on the players after using PCA. 
 
+![](GMM.png#center)
 
 
 Below is a Agglomerative Hierarchical clustering algorithm on the players after using PCA. 
