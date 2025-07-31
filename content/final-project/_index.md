@@ -36,26 +36,14 @@ Here is a correlation matrix between the numeric variables for our player datase
 Some correlations jump out namely the ...
 
 Goalie attributes         and crossing to ball control
-![](heatmap.png#center){ width=300px height=300px } ![](heatmap2.png#center){ width=300px height=300px }
+![](heatmap.png#center) ![](heatmap2.png#center)
 
 
+### Effect of age on players
 
+![](attributesvsage.png)
 
-Below is a K-means clustering algorithm on the players after reducing the dimensions using Principal Component Analysis(PCA). 
-
-![](K-means.png#center)
-
-Below is a GMM clustering algorithm on the players after using PCA. 
-
-![](GMM.png#center)
-
-
-Below is a Agglomerative Hierarchical clustering algorithm on the players after using PCA. 
-
-![](agglo.png#center)
-![](agglobarchart.png#center)
-
-
+![]
 ## Modeling
 
 Additionally, we created a neural network to predict a soccer player's rating for the next season based on their attributes and ratings from the past three seasons. We initially experimented with regression models like OLS, Lasso, and Ridge for rating prediction, but these models struggled to account for time series data from a given player. 
