@@ -1,6 +1,4 @@
----
-title: "Final Project"
----
+
 # Final Project -- Analyzing European Soccer 
 
 ## Introduction
@@ -26,9 +24,9 @@ We merged our two player attributes datasets into one dataframe for easier index
 [Click here to view the EDA](index.html)
 
 Below is a histogram and KDE (smoothed out histogram) of player potential of all the more than 11,000 players in our dataset. Player potential refers to a player's future ability to perform at a high level, and this value ranges from 0 to 100. The distribution is approximately normally disitrbuted with most players' ratings between 60 and 90. 
-![](PotentialHistogram(Normal).jpg#center){ width=300px height=200px }
+![](PotentialHistogram(Normal).jpg#center)
 
-###Correlation Matrices
+### Correlation Matrices
 
 This heatmap shows the correlation matrix between different player attributes. Correlation values range from -1 to 1, where:
 - 1 means two traits increase together,
@@ -42,15 +40,22 @@ This heatmap shows the correlation matrix between different player attributes. C
 - Goalkeeper attributes form a separate group, highly correlated with each other but negatively correlated with outfield player skills.
 
 
-Goalie attributes         and crossing to ball control
-![](heatmap.png#center) ![](heatmap2.png#center)
+#### Technical Skills
+![](heatmap.png#center) 
+- Ball control is highly correlated with short passing (0.89), dribbling (0.90), and crossing (0.81), indicating that players who are good in one technical skill often excel in others.
+- Volleys, finishing, and curve also show moderate to strong correlations with ball control and dribbling, further linking offensive precision with overall technique.
+
+#### Goalkeeper Attributes
+![](heatmap2.png#center)
+- Goalkeeping attributes such as diving, handling, reflexes, and positioning are all highly correlated (above 0.93 in most cases).
+- These values show that goalkeeper ability is largely defined by a tight group of specialized skills that behave independently from outfield traits.
 
 
 ### Effect of age on players
 
 ![](attributevsage.png)
 
-In this analysis, we examined how football players’ attributes change as they age. We used each player’s birthday and the date of their most recent data to calculate their age. Then we grouped the players by age and found the average values for five key traits: reactions, stamina, acceleration, sprint speed, and agility. The line chart we created shows how these averages shift as players get older.
+Here, we examined how football players’ attributes change as they age. We used each player’s birthday and the date of their most recent data to calculate their age. Then we grouped the players by age and found the average values for five key traits: reactions, stamina, acceleration, sprint speed, and agility. The line chart we created shows how these averages shift as players get older.
 
 The chart shows that physical traits like stamina, sprint speed, acceleration, and agility increase until around age 26 to 28 and then drop quickly after age 30. On the other hand, reactions continue to improve slightly with age and stay high even as the player gets older. This tells us that while older players may lose physical speed and movement, they often remain mentally sharp and experienced, which can still make them very effective on the field.
 
