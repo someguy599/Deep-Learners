@@ -219,7 +219,10 @@ a<!DOCTYPE html>
     currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
     track.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
   }
-  }
+  window.addEventListener("resize", () => {
+  moveSlide(0); // snap to current slide width
+});
+
 </script>
 
 <script defer src="/assets/js/main.5c74bbbd98d0e1f0057ece22154fe165db4d0207ad84eeee2cd380f8c5abb45a.js"></script>
