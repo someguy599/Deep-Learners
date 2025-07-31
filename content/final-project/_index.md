@@ -32,11 +32,11 @@ Here is a correlation matrix between the numeric variables for our player datase
 
 Some correlations jump out namely the ...
 
-Goalie attributes
-![](heatmap.png#center)
+Goalie attributes         and crossing to ball control
+![](heatmap.png#center) ![](heatmap2.png#center)
 
-and crossing to ball control
-![](heatmap2.png#center)
+
+
 
 Below is a K-means clustering algorithm on the players after reducing the dimensions using Principal Component Analysis(PCA). 
 
