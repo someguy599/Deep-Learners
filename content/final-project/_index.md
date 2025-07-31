@@ -59,6 +59,7 @@ Below is a Agglomerative Hierarchical clustering algorithm on the players after 
 ## Modeling
 
 We created to predict the performance of a team throughout a season. And 
+Additionally, we created a neural network to predict a soccer player's rating for the next season based on their attributes and ratings from the past three seasons. We initially experimented with regression models like OLS, Lasso, and Ridge for rating prediction, but these models struggled to account for time series data from a given player. 
 
 ## Conclusion
 
