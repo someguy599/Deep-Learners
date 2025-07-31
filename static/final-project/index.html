@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dual Image Carousel + Markdown Viewer</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .carousel-container {
+      position: relative;
+      width: 900px;
+      overflow: hidden;
+      border: 0px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease;
+      width: max-content;
+    }
+    .carousel-slide {
+      display: flex;
+      flex-direction: row;
+      width: 900px;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .image-wrapper {
+      width: 420px;
+      text-align: center;
+    }
+    .image-wrapper img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+    .label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      background-color: rgba(255,255,255,0.8);
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      user-select: none;
+    }
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+    .markdown-viewer {
+      width: 900px;
+      max-width: 90vw;
+      border: 2px solid #aaa;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fafafa;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Image Carousel -->
+<div class="carousel-container">
+  <div class="carousel-track" id="carouselTrack">
+    <div class="carousel-slide">
+      <div class="image-wrapper">
+        <div class="label">Agglomerative Clustering</div>
+        <img src="agglo.png" alt="Agglo">
+      </div>
+      <div class="image-wrapper">
+        <div class="label">Agglomerative Clustering Cluster Attributes</div>
+        <img src="agglobarchart.png" alt="Agglo Bar">
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <div class="image-wrapper">
+        <div class="label">Gausian Mixsture Model Clustering</div>
+        <img src="GMM.png" alt="GMM">
+      </div>
+      <div class="image-wrapper">
+        <div class="label">Gaussian Mixture Model Cluster Attributes</div>
+        <img src="gmmbar.png" alt="GMM">
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <div class="image-wrapper">
+        <div class="label">K-means Clustering</div>
+        <img src="K-means.png" alt="K-means">
+      </div>
+      <div class="image-wrapper">
+        <div class="label">K-means Cluster Attributes</div>
+        <img src="K-meansBarchar.pngt" alt="K-means">
+      </div>
+    </div>
+  </div>
+  <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<!-- Markdown Viewer -->
+<div id="markdown-content" class="markdown-viewer">Loading markdown...</div>
+
+<script>
+  let currentSlide = 0;
+  const track = document.getElementById('carouselTrack');
+  const totalSlides = document.querySelectorAll('.carousel-slide').length;
+
+  function moveSlide(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    const offset = -currentSlide * 900;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  // Load and render Markdown file
+  fetch('report.md')
+    .then(res => res.text())
+    .then(md => {
+      document.getElementById('markdown-content').innerHTML = marked.parse(md);
+    })
+    .catch(err => {
+      document.getElementById('markdown-content').innerText = "Failed to load markdown.";
+      console.error(err);
+    });
+</script>
+
+</body>
+</html>
