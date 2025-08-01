@@ -26,6 +26,8 @@ INSERT TEXT HERE
 Below is a histogram and KDE (smoothed out histogram) of player potential of all the more than 11,000 players in our dataset. Player potential refers to a player's future ability to perform at a high level, and this value ranges from 0 to 100. The distribution is approximately normally disitrbuted with most players' ratings between 60 and 90. 
 ![](PotentialHistogram(Normal).jpg#center)
 
+![](favored_team_win_probability.png#center)
+
 ### Correlation Matrices
 
 This heatmap shows the correlation matrix between different player attributes. Correlation values range from -1 to 1, where:
