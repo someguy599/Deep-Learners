@@ -60,16 +60,16 @@ The chart shows that physical traits like stamina, sprint speed, acceleration, a
 
 Using random forest regression, we built a model that takes in a certain team and season, and then would predict the score for each game the team had in that season's schedule. For example, when we run the model using the team Real Madrid, and the season 2015-16, here are the results of the model compared to the team's actual performance that season:
 
-Actual Summary
-Average Goals Scored by Team: 2.89
-Average Goals Conceded: 0.89
-Record (W-D-L): 28-6-4
-Season Score: 90 points
-Predicted Summary
-Average Goals Scored by Team: 2.92
-Average Goals Conceded: 1.32
-Record (W-D-L): 29-7-2
-Season Score: 94 points
+**Actual Summary**
+- Average Goals Scored by Team: 2.89
+- Average Goals Conceded: 0.89
+- Record (W-D-L): 28-6-4
+- Season Score: 90 points
+**Predicted Summary**
+- Average Goals Scored by Team: 2.92
+- Average Goals Conceded: 1.32
+- Record (W-D-L): 29-7-2
+- Season Score: 94 points
 
 Additionally, we created a neural network to predict a soccer player's rating for the next season based on their attributes and ratings from the past three seasons. We initially experimented with regression models like OLS, Lasso, and Ridge for rating prediction, but these models struggled to account for time series data from a given player. 
 
