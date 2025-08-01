@@ -65,6 +65,7 @@ Using random forest regression, we built a model that takes in a certain team an
 - Average Goals Conceded: 0.89
 - Record (W-D-L): 28-6-4
 - Season Score: 90 points
+  
 **Predicted Summary**
 - Average Goals Scored by Team: 2.92
 - Average Goals Conceded: 1.32
