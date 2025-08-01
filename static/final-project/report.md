@@ -63,6 +63,12 @@ The chart shows that physical traits like stamina, sprint speed, acceleration, a
 
 To better understand how these attributes are related, we created a correlation matrix. The heatmap shows that physical traits such as sprint speed, agility, and stamina are strongly linked to one another and all decrease with age, while reactions are positively correlated with age. This means players who are quick often also have strong stamina and agility. Overall, the analysis shows that aging affects physical abilities more than mental sharpness, which helps explain why older players can still perform well in roles that rely on awareness and decision-making rather than speed.
 
+### Bookmarkers
+
+![](BookmarkerEvaluations.png)
+
+One of the features that our model uses to predict a teams perfomance during a season are the betting odds from Bookmarkers so we evaluated the performance of these Bookmakring companies using their odds and turning them into the probabilities for the outcome of games. Then extrapolating a result and determining the accuracy, bier score, and margin which are graphed above.
+
 ## Modeling
 
 Additionally, we created a neural network to predict a soccer player's rating for the next season based on their attributes and ratings from the past three seasons. We initially experimented with regression models like OLS, Lasso, and Ridge for rating prediction, but these models struggled to account for time series data from a given player. 
