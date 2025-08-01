@@ -58,7 +58,7 @@ The chart shows that physical traits like stamina, sprint speed, acceleration, a
 ![]
 ## Modeling
 
-Using random forest regression, we built a model that takes in a certain team and season, and then would predict the score for each game the team had in that season's schedule. For example, when we run the model using the team Real Madrid, and the season 2015-16, here are the results of the model compared to the team's actual performance that season:
+Using random forest regression, we built a model that takes in a certain team and season, and then would predict the score for each game the team had in that season's schedule. Random Forest Regression builds many decision trees, each trained on a random subset of data and features (bootstrapping + feature sampling). Each tree predicts a numerical value, and the forest’s final output is the average of all tree predictions. This ensemble approach reduces overfitting, captures non-linear patterns, and is robust to outliers while requiring no feature scaling. For example, when we run the model using the team Real Madrid, and the season 2015-16, here are the results of the model compared to the team's actual performance that season:
 
 **Actual Summary**
 - Average Goals Scored by Team: 2.89
