@@ -18,7 +18,7 @@ Each player in our dataset has over 30 standardized quantitative variables rangi
 We merged our two player attributes datasets into one dataframe for easier indexing where each row represents a season that a given player was rated. 
 
 ### Cleaning Match and Team Dataset
-
+INSERT TEXT HERE
 
 
 ## Exploratory Data Analysis
@@ -58,6 +58,7 @@ The chart shows that physical traits like stamina, sprint speed, acceleration, a
 ![]
 ## Modeling
 
+## Random forest for Match Prediction
 Using random forest regression, we built a model that takes in a certain team and season, and then would predict the score for each game the team had in that season's schedule. Random Forest Regression builds many decision trees, each trained on a random subset of data and features (bootstrapping + feature sampling). Each tree predicts a numerical value, and the forest’s final output is the average of all tree predictions. This ensemble approach reduces overfitting, captures non-linear patterns, and is robust to outliers while requiring no feature scaling. For example, when we run the model using the team Real Madrid, and the season 2015-16, here are the results of the model compared to the team's actual performance that season:
 
 **Actual Summary**
@@ -72,7 +73,14 @@ Using random forest regression, we built a model that takes in a certain team an
 - Record (W-D-L): 29-7-2
 - Season Score: 94 points
 
+## Neural Network for Rating Prediction 
 Additionally, we created a neural network to predict a soccer player's rating for the next season based on their attributes and ratings from the past three seasons. We initially experimented with regression models like OLS, Lasso, and Ridge for rating prediction, but these models struggled to account for time series data from a given player. 
+
+Our neural network is an LSTM (Long Short-Term Memory) model that analyzes timeseries data. It looks at the complex features of the various players in our dataset and uses them to discover patterns. The neural network is trained from a model with randomly selected values chosen as "weights" and then updates these weights during training "epochs" during which the model fine-tunes its results. The result is a predicted rating for the next season for the player. 
+
+To train our model, we first split our dataset of players randomly into a training and testing set with 80% of the data being used for training. None of our testing set overlapped with the training data set, and as a result, we were able to evaluate our model's accuracy based on how well it performs on the unseen test dataset. 
+
+We created a widget that models the predicted and actual player ratings with respect to their age. The ratings are outputted on a scale from 0 to 100. Our model ensures that there is no data leakage, which is the phenomenon where a model looks at future data to predict the past. Our LSTM neural network prevents this by utilizing backpropagation only throughout past data to update the model. Overall, our model is on average about 4 rating points off the true value of a player's rating for a given season, which is impressive given the volatility of soccer player performance throughout their career. 
 
 ## Conclusion
 
